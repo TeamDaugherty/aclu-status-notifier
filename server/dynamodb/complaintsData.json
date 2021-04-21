@@ -1,0 +1,10 @@
+[
+    {
+        "complaintID": "2020-001",
+        "complaintStatus": "Complaint Closed"
+    },
+    {
+        "complaintID": "2020-002",
+        "complaintStatus": "Complaint Received/Assigned to Complaint Counselor"
+    }
+]
