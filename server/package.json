@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=develop node -r esm app/app.js",
     "db:create": "cd dynamodb && node createComplaintsTable.js && cd ..",
-    "db:load": "cd dynamodb && node loadComplaintsData.js && cd ..",
+    "db:load": "cd dynamodb && node loadComplaintsMockData.js && cd ..",
     "db:read": "cd dynamodb && node getComplaintTable.js && cd ..",
     "lint": "eslint app/**",
     "lint-fix": "eslint --fix app/**",

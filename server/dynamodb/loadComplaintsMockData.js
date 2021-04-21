@@ -12,7 +12,7 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 console.log('Importing Complaints into DynamoDB. Please wait.');
 
 const complaints = JSON.parse(
-  fs.readFileSync('complaintsData.json', 'utf8'),
+  fs.readFileSync('complaintsMockData.json', 'utf8'),
 );
 
 complaints.forEach((complaint) => {
