@@ -3,42 +3,33 @@ import { gql } from 'apollo-server-express';
 const typeDefs = gql`
   type Query {
     Complaints(
-      id: [ID]
-      statusId: [Int]
+      id: [String]
+      status: [String]
       emailAddress: [String]
-      limit: Int
-      offset: Int
     ): [Complaint]
-    Statuses(id: [ID]): [Status]
+    Statuses: [String]
   }
 
   type Mutation {
     CreateComplaint(complaint: NewComplaint!): Complaint
-    UpdateComplaint(id: ID, complaint: UpdateComplaint!): Complaint
+    UpdateComplaint(id: ID!, complaint: UpdateComplaint!): Complaint
   }
 
   type Complaint {
-    id: ID
-    status: Status
+    id: String
+    status: String
     emailAddress: String
   }
 
   input NewComplaint {
-    name: String!
-    statusId: ID!
+    id: String!
+    status: String!
     emailAddress: String!
   }
 
   input UpdateComplaint {
-    name: String
-    statusId: ID
+    status: String
     emailAddress: String
-  }
-
-  type Status {
-    id: ID
-    name: String
-    description: String
   }
 `;
 

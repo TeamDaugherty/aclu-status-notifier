@@ -22,6 +22,7 @@ complaints.forEach((complaint) => {
     TableName: 'Complaints',
     Item: {
       complaintID: complaint.complaintID,
+      emailAddress: complaint.emailAddress,
       complaintStatus: complaint.complaintStatus,
     },
   };

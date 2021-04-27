@@ -1,10 +1,12 @@
 [
     {
         "complaintID": "2020-001",
+        "emailAddress": "some.email@gmail.com",
         "complaintStatus": "Complaint Closed"
     },
     {
         "complaintID": "2020-002",
+        "emailAddress": "fake@hotmail.com",
         "complaintStatus": "Complaint Received/Assigned to Complaint Counselor"
     }
 ]
