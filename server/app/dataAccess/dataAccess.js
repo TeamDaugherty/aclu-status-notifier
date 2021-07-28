@@ -1,7 +1,7 @@
 import { mapToGraphQL } from './mappingUtil';
 import * as queryUtil from './queryUtil';
 
-const getComplaints = async (args, context) => {
+const getComplaint = async (args, context) => {
   const params = queryUtil.getComplaintsQuery(args);
   const data = await context.docClient.scan(params).promise();
   return mapToGraphQL(data.Items);
@@ -17,4 +17,4 @@ const CreateComplaint = (args, context) => [
   { id: '2020-002' },
 ];
 
-export { getComplaints, updateComplaint, CreateComplaint };
+export { getComplaint, updateComplaint, CreateComplaint };

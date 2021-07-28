@@ -6,12 +6,7 @@ const mapToGraphQL = (records) => {
     emailAddress: 'emailAddress',
     complaintStatus: 'status',
   };
-  const mapped = merge(records, map);
-  if (!Array.isArray(mapped)) {
-    return [mapped];
-  }
-
-  return mapped;
+  return merge(records, map);
 };
 
 const mapToDB = (records) => {

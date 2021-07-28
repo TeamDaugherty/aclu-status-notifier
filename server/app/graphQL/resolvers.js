@@ -3,8 +3,8 @@ import * as complaintController from '../controllers/complaintController';
 
 const resolvers = {
   Query: {
-    Complaints: (object, args, context, info) =>
-      complaintController.getComplaints(args, context),
+    Complaint: (object, args, context, info) =>
+      complaintController.getComplaint(args, context),
     Statuses: (object, args, context, info) => {},
   },
   Mutation: {

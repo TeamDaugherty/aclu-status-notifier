@@ -2,11 +2,7 @@ import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
   type Query {
-    Complaints(
-      id: [String]
-      status: [String]
-      emailAddress: [String]
-    ): [Complaint]
+    Complaint(id: String): Complaint
     Statuses: [String]
   }
 
