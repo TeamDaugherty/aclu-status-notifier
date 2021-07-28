@@ -20,7 +20,8 @@
     "aws-sdk": "^2.889.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "object-mapper": "^6.2.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
