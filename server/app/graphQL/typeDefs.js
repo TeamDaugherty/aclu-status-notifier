@@ -15,6 +15,14 @@ const typeDefs = gql`
     id: String
     status: String
     emailAddress: String
+    complaintUpdated: [ComplaintUpdatedItem]
+  }
+
+  type ComplaintUpdatedItem {
+    updatedBy: String
+    statusTo: String
+    statusFrom: String
+    dateUpdated: String
   }
 
   input NewComplaint {
