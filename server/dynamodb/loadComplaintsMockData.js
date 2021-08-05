@@ -4,7 +4,7 @@ const fs = require('fs');
 
 AWS.config.update({
   region: 'us-east-1',
-  endpoint: 'http://localhost:8000',
+  endpoint: 'http://localhost:8000'
 });
 
 const docClient = new AWS.DynamoDB.DocumentClient();
@@ -12,7 +12,7 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 console.log('Importing Complaints into DynamoDB. Please wait.');
 
 const complaints = JSON.parse(
-  fs.readFileSync('complaintsMockData.json', 'utf8'),
+  fs.readFileSync('complaintsMockData.json', 'utf8')
 );
 
 complaints.forEach((complaint) => {
@@ -20,11 +20,7 @@ complaints.forEach((complaint) => {
 
   const params = {
     TableName: 'Complaints',
-    Item: {
-      complaintID: complaint.complaintID,
-      emailAddress: complaint.emailAddress,
-      complaintStatus: complaint.complaintStatus,
-    },
+    Item: complaint
   };
 
   docClient.put(params, (err, data) => {
@@ -33,7 +29,7 @@ complaints.forEach((complaint) => {
         'Unable to add Complaint',
         complaint.complaintID,
         '. Error JSON:',
-        JSON.stringify(err, null, 2),
+        JSON.stringify(err, null, 2)
       );
     } else {
       console.log('PutItem succeeded:', complaint.complaintID);
