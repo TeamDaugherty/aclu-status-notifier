@@ -13,9 +13,10 @@ const mapToGraphQL = (records) => {
   return merge(records, map);
 };
 
-const mapToDB = (records) => {
-  //
-  //
-};
+const mapToDB = (record) => ({
+  complaintID: record.id,
+  emailAddress: record.emailAddress,
+  complaintStatus: record.status
+});
 
 export { mapToGraphQL, mapToDB };

@@ -1,3 +1,5 @@
+import { mapToDB } from './mappingUtil';
+
 const getComplaintsQuery = (args) => {
   const { id } = args;
 
@@ -10,4 +12,14 @@ const getComplaintsQuery = (args) => {
   return params;
 };
 
-export { getComplaintsQuery };
+const createComplaintQuery = (args) => {
+  const complaint = mapToDB(args.complaint);
+  const params = {
+    TableName: 'Complaints',
+    Item: complaint
+  };
+
+  return params;
+};
+
+export { getComplaintsQuery, createComplaintQuery };
