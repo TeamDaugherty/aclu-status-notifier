@@ -5,6 +5,10 @@
   "main": "app/app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=develop node -r esm app/app.js",
+    "db:create": "cd dynamodb && node createComplaintsTable.js && cd ..",
+    "db:delete": "cd dynamodb && node deleteComplaintsTable.js && cd ..",
+    "db:load": "cd dynamodb && node loadComplaintsMockData.js && cd ..",
+    "db:read": "cd dynamodb && node getComplaintTable.js && cd ..",
     "lint": "eslint app/**",
     "lint-fix": "eslint --fix app/**",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,9 +17,11 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^2.19.2",
+    "aws-sdk": "^2.889.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "object-mapper": "^6.2.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

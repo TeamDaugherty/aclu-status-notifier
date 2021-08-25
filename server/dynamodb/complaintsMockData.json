@@ -1,0 +1,52 @@
+[
+    {
+        "complaintID": "2020-001",
+        "emailAddress": "some.email@gmail.com",
+        "complaintStatus": "Complaint Closed",
+        "complaintUpdated": [
+            {
+            "updatedBy": "c0427bd9-ef0f-4b01-94dc-f6c130a1d061",
+            "statusTo": "Complaint Received/Assigned to Complaint Counselor",
+            "statusFrom": "",
+            "dateUpdated": "7/30/2020"
+            },
+            {
+            "updatedBy": "de17ecfc-f2f6-432d-8be7-25f6ca9e2ed5",
+            "statusTo": "Complaint Received/Assigned to Complaint Counselor",
+            "statusFrom": "Complaint Received/Assigned to Complaint Counselor",
+            "dateUpdated": "9/16/2020"
+            },
+            {
+            "updatedBy": "de17ecfc-f2f6-432d-8be7-25f6ca9e2ed5",
+            "statusTo": "Complaint Closed",
+            "statusFrom": "Complaint Received/Assigned to Complaint Counselor",
+            "dateUpdated": "11/30/2020"
+            }
+        ]
+    },
+    {
+        "complaintID": "2020-002",
+        "emailAddress": "fake@hotmail.com",
+        "complaintStatus": "Complaint Received/Assigned to Complaint Counselor",
+        "complaintUpdated": [
+            {
+            "updatedBy": "c0427bd9-ef0f-4b01-94dc-f6c130a1d061",
+            "statusTo": "Complaint Received/Assigned to Complaint Counselor",
+            "statusFrom": "",
+            "dateUpdated": "7/30/2020"
+            },
+            {
+            "updatedBy": "de17ecfc-f2f6-432d-8be7-25f6ca9e2ed5",
+            "statusTo": "Complaint Received/Assigned to Complaint Counselor",
+            "statusFrom": "Complaint Received/Assigned to Complaint Counselor",
+            "dateUpdated": "9/16/2020"
+            },
+            {
+            "updatedBy": "de17ecfc-f2f6-432d-8be7-25f6ca9e2ed5",
+            "statusTo": "Complaint Closed",
+            "statusFrom": "Complaint Received/Assigned to Complaint Counselor",
+            "dateUpdated": "11/30/2020"
+            }
+        ]
+    }
+]
