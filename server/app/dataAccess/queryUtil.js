@@ -22,17 +22,28 @@ const createComplaintQuery = (args) => {
   return params;
 };
 
-const getUpdateComplaintQuery = (args) => {
-  const { id } = args;
+const getUpdateComplaintQuery = (id, complaintUpdate) => {
+  // const { id, complaintUpdate } = args;
+  console.log("query");
+  console.log(id);
+  console.log(complaintUpdate);
 
   const params = {
-    TableName: 'Complaints',
-    Key: '',
-    ConditionExpression: '',
-    UpdateExpression: '',
-    ExpressionAttributeValues: { ':idvalue': id }
-
+    TableName:'Complaints',
+    Key:{
+        "complaintID": id
+    },
+    UpdateExpression: "set complaintStatus = :s, complaintUpdated = list_append(if_not_exists(#updateList, :empty_list), :my_value)",
+    ExpressionAttributeValues:{
+        ":my_value":{"L": [{"S": "test"}]},
+        ":empty_list":{"L":[]} ,
+        ":s":complaintUpdate.statusTo
+    },
+    ExpressionAttributeNames : {
+        "#updateList" : "complaintUpdated"
+    }
   };
+
 
   return params;
 };

@@ -13,7 +13,7 @@ const typeDefs = gql`
 
   type Complaint {
     id: String
-    status: String
+    complaintStatus: String
     emailAddress: String
     complaintUpdated: [ComplaintUpdatedItem]
   }
@@ -32,7 +32,7 @@ const typeDefs = gql`
   }
 
   input UpdateComplaint {
-    status: String
+    complaintStatus: String
     emailAddress: String
   }
 `;
