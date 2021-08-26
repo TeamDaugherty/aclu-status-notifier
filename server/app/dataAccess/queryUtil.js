@@ -22,4 +22,19 @@ const createComplaintQuery = (args) => {
   return params;
 };
 
-export { getComplaintsQuery, createComplaintQuery };
+const getUpdateComplaintQuery = (args) => {
+  const { id } = args;
+
+  const params = {
+    TableName: 'Complaints',
+    Key: '',
+    ConditionExpression: '',
+    UpdateExpression: '',
+    ExpressionAttributeValues: { ':idvalue': id }
+
+  };
+
+  return params;
+};
+
+export { getComplaintsQuery, createComplaintQuery, getUpdateComplaintQuery };

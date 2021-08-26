@@ -8,8 +8,11 @@ const getComplaint = async (args, context) => {
 };
 
 const updateComplaint = (args, context) => [
-  { id: '2020-001' },
-  { id: '2020-002' }
+  const params = queryUtil.getUpdateComplaintQuery(args);
+  context.docClient.update(params, function(err, data) {
+   if (err) console.log(err);
+   else console.log(data);
+  });
 ];
 
 const CreateComplaint = async (args, context) => {
