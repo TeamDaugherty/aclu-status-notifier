@@ -4,7 +4,7 @@ const mapToGraphQL = (records) => {
   const map = {
     complaintID: 'id',
     emailAddress: 'emailAddress',
-    complaintStatus: 'status',
+    complaintStatus: 'complaintStatus',
     'complaintUpdated[].updatedBy': 'complaintUpdated[].updatedBy',
     'complaintUpdated[].statusTo': 'complaintUpdated[].statusTo',
     'complaintUpdated[].statusFrom': 'complaintUpdated[].statusFrom',
@@ -16,7 +16,7 @@ const mapToGraphQL = (records) => {
 const mapToDB = (record) => ({
   complaintID: record.id,
   emailAddress: record.emailAddress,
-  complaintStatus: record.status
+  complaintStatus: record.complaintStatus
 });
 
 export { mapToGraphQL, mapToDB };

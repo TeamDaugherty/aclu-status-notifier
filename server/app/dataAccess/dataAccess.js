@@ -7,32 +7,31 @@ const getComplaint = async (args, context) => {
   return mapToGraphQL(data.Items);
 };
 
-const updateComplaint = (args, context) => {
+const updateComplaint = async (args, context) => {
 
   const { id, complaint } = args;
-  console.log(id);
-  console.log(complaint);
-
-
-
   let time = new Date().toLocaleDateString()
-  // let complaintStatus = getComplaint(id, context).complaintStatus;
-   let prevComplaintStatus = "p";
-
+  let prevComplaint = await getComplaint({"id":id}, context);
 
   const complaintUpdate = {
     updatedBy: complaint.emailAddress,
     statusTo: complaint.complaintStatus,
-    statusFrom: prevComplaintStatus,
+    statusFrom: prevComplaint.complaintStatus,
     dateUpdated: time
-
   }
-  console.log(complaintUpdate);
+
   const params = queryUtil.getUpdateComplaintQuery(id,complaintUpdate);
+
+  console.log("Updating the item...");
+
   context.docClient.update(params, function(err, data) {
-   if (err) console.log(err);
-   else console.log(data);
+    if (err) {
+        console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+    } else {
+        console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+    }
   });
+
 };
 
 const CreateComplaint = async (args, context) => {
