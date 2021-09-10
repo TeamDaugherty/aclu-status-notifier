@@ -1,6 +1,54 @@
-.instructionPanel {
-  height: 100vh;
-  background-image: url(./assets/instructionPanel1.PNG);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+.App {
+  text-align: center;
 }
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.rowC {
+  display:flex;
+  flex-direction:row;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mainLeft {
+  width: 50vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./media/signInScreen.png")
+}
+
+.mainRight {
+  width: 50%;
+  height: 100%;
+}
+
+.loginFrame {
+  margin-top: 20%;
+  margin-left: 25%;
+  margin-right: 25%;
+  justify-content: space-evenly;
+}
+
