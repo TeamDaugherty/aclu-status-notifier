@@ -8,12 +8,12 @@ const typeDefs = gql`
 
   type Mutation {
     CreateComplaint(complaint: NewComplaint!): Complaint
-    UpdateComplaint(id: ID!, complaint: UpdateComplaint!): Complaint
+    UpdateComplaint(id: ID!, complaint: ComplaintUpdate!): Complaint
   }
 
   type Complaint {
     id: String
-    status: String
+    complaintStatus: String
     emailAddress: String
     complaintUpdated: [ComplaintUpdatedItem]
   }
@@ -27,12 +27,12 @@ const typeDefs = gql`
 
   input NewComplaint {
     id: String!
-    status: String!
+    complaintStatus: String!
     emailAddress: String!
   }
 
-  input UpdateComplaint {
-    status: String
+  input ComplaintUpdate {
+    complaintStatus: String
     emailAddress: String
   }
 `;

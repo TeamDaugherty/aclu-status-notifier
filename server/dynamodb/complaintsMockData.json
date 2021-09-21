@@ -48,5 +48,18 @@
             "dateUpdated": "11/30/2020"
             }
         ]
+    },
+    {
+        "complaintID": "2020-003",
+        "emailAddress": "fake@hotmail.com",
+        "complaintStatus": "Recieved",
+        "complaintUpdated": [
+            {
+            "updatedBy": "c0427bd9-ef0f-4b01-94dc-f6c130a1d061",
+            "statusTo": "Complaint Received/Assigned to Complaint Counselor",
+            "statusFrom": "",
+            "dateUpdated": "7/30/2020"
+            }
+        ]
     }
 ]
