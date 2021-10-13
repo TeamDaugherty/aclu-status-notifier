@@ -1,14 +1,11 @@
 import './App.css'
-import LeftPane from './components/leftPane'
-import RightPane from './components/rightPane'
+import MainPage from './components/MainPage'
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>ACLU</header>
-      <div className='rowC'>
-        <LeftPane />
-        <RightPane />
+      <div >
+        <MainPage />
       </div>
     </div>
   )

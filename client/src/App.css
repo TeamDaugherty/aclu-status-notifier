@@ -14,6 +14,7 @@
 }
 
 .rowC {
+  height : 100vh;
   display:flex;
   flex-direction:row;
 }
@@ -40,6 +41,15 @@
   background-image: url("./media/signInScreen.png")
 }
 
+.estat-info {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./media/enterComplaintInfo.png")
+}
+
 .mainRight {
   width: 50%;
   height: 100%;
@@ -52,3 +62,62 @@
   justify-content: space-evenly;
 }
 
+.rectangle {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: #231E5F;
+}
+
+.rectangle .active{
+  background: #231E5F;
+}
+
+.rectangle .inactive{
+  background: #CDCCCC;
+}
+
+
+.split-screen {
+  display:flex;
+  flex-direction:row;
+  height: 100vh;
+
+}
+
+.half-screen {
+  width: 50%;
+  height: 100%;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.complaint-input{
+  margin-top: 10px;
+  width: 50%;
+  height: 50px;
+  font-size: 1.5em;
+}
+
+input{
+font-size: 1em;
+width: 49%;
+height: 20px;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+}
+
+.submit-btn{
+  margin-top: 10px;
+  width: 50%;
+  height: 50px;
+  background-color: #005AAA;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+
+}
