@@ -8,14 +8,14 @@ import ComplaintFlow from './ComplaintFlow.js'
 
 
 
-class RightPane extends React.Component {
+class MainPage extends React.Component {
   render() {
     return (
-      <div className>
+      <div >
         <ComplaintFlow />
       </div>
     )
   }
 }
 
-export default RightPane
+export default MainPage

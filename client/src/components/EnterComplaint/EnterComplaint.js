@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import Stepper from '../Stepper'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 export default class EnterComplaint extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {stepNumber: 1};
+
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +18,8 @@ export default class EnterComplaint extends Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    console.log("hello")
+    this.setState({stepNumber: this.state.stepNumber+1});
     event.preventDefault();
   }
 
@@ -24,13 +27,15 @@ export default class EnterComplaint extends Component {
     return (
 
       <div className="container">
-        <div className='complaintFrame' className="column">
+        <div className="complaintFrame column">
+          <Stepper stepNumber={this.state.stepNumber}/>
+
           <p style={{fontSize: "1.8em"}}>Enter complaint ID</p>
           <p style={{fontWeight: "bold"}}>
             Enter the complaint number below:
           </p>
         </div>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Group className="mb-3" controlId="formComplaintID">
             <Form.Control type="text" placeholder="Complaint ID" />
           </Form.Group>

@@ -11,7 +11,7 @@ import ComplaintFlow from './ComplaintFlow.js'
 class RightPane extends React.Component {
   render() {
     return (
-      <div className>
+      <div>
         <ComplaintFlow />
       </div>
     )
