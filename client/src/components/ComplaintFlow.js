@@ -43,8 +43,8 @@ export class ComplaintFlow extends React.Component {
 
   render() {
   const { step } = this.state;
-  const { complaintID } = this.state;
-  const values = { step, complaintID };
+  const { complaintID, emailAddress, phoneNumber, complaintStatus } = this.state;
+  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus };
 
   switch (step) {
     case 1:

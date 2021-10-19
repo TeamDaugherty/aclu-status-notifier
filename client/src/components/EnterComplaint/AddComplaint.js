@@ -32,15 +32,22 @@ export class AddComplaint extends Component {
 
           <h4>Email Address</h4>
           <Form.Group className="mb-3" controlId="formEmailAddress">
-            <Form.Control type="text" placeholder="Email Address" />
+            <Form.Control type="text" placeholder="Email Address"
+            value={values.emailAddress}
+            onChange={handleChange('emailAddress')}
+            />
           </Form.Group>
           <h4>Cell Phone Number</h4>
           <Form.Group className="mb-3" controlId="formPhoneNumber">
-            <Form.Control type="text" placeholder="555-555-5555" />
+            <Form.Control type="text" placeholder="555-555-5555"
+            value={values.phoneNumber}
+            onChange={handleChange('phoneNumber')}/>
           </Form.Group>
           <h4>Complaint Status</h4>
           <Form.Group className="mb-3" controlId="formComplaintStatus">
-            <Form.Control type="text" placeholder="Complaint Status" />
+            <Form.Control type="text" placeholder="Complaint Status"
+            value={values.complaintStatus}
+            onChange={handleChange('complaintStatus')}/>
           </Form.Group>
 
           <Button variant="primary" type="submit" className="submit-btn">

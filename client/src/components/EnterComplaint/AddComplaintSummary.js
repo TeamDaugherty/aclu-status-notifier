@@ -27,6 +27,15 @@ export class AddComplaint extends Component {
           <p style={{fontWeight: "bold"}}>
             Complaint ID : {values.complaintID}
           </p>
+          <p style={{fontWeight: "bold"}}>
+            Email Adress : {values.emailAddress}
+          </p>
+          <p style={{fontWeight: "bold"}}>
+            Phone Number : {values.phoneNumber}
+          </p>
+          <p style={{fontWeight: "bold"}}>
+            Status : {values.complaintStatus}
+          </p>
         </div>
 
         <Button variant="primary" type="submit" className="submit-btn">
