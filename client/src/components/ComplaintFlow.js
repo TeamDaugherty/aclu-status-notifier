@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EnterComplaint from './EnterComplaint/EnterComplaint.js'
 import AddComplaint from './EnterComplaint/AddComplaint.js'
 import AddComplaintSummary from './EnterComplaint/AddComplaintSummary.js'
+import Success from './EnterComplaint/Success.js'
 
 import EnterComplaintInfo from './EnterComplaint/EnterComplaintInfo.js'
 
@@ -86,6 +87,22 @@ export class ComplaintFlow extends React.Component {
         </div>
         <div className='half-screen'>
           <AddComplaintSummary
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        </div>
+      </div>
+    );
+    case 4:
+    return (
+      <div className='split-screen'>
+        <div className='half-screen'>
+          <EnterComplaintInfo/>
+        </div>
+        <div className='half-screen'>
+          <Success
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}

@@ -38,7 +38,7 @@ export class AddComplaint extends Component {
           </p>
         </div>
 
-        <Button variant="primary" type="submit" className="submit-btn">
+        <Button variant="primary" onClick={this.continue} className="submit-btn">
           Send Update
         </Button>
         <br/>
