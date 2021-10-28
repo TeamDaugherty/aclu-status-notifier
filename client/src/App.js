@@ -4,9 +4,10 @@ import MainPage from './components/MainPage'
 function App() {
   return (
     <div className='App'>
-      <div >
-        <MainPage />
-      </div>
+      <header className='App-header'>ACLU</header>
+        <div >
+          <MainPage />
+        </div>
     </div>
   )
 }

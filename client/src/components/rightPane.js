@@ -11,8 +11,8 @@ import ComplaintFlow from './ComplaintFlow.js'
 class RightPane extends React.Component {
   render() {
     return (
-      <div>
-        <ComplaintFlow />
+      <div className='mainRight'>
+        <Login />
       </div>
     )
   }
