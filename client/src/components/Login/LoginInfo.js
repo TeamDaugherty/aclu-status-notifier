@@ -1,7 +1,7 @@
-import '../App.js';
+import '../../App.js';
 import React from 'react';
 
-class LeftPane extends React.Component {
+class LoginInfo extends React.Component {
     render() {
       return (
         <div className="mainLeft">
@@ -11,4 +11,4 @@ class LeftPane extends React.Component {
     }
   }
 
-  export default LeftPane
+  export default LoginInfo

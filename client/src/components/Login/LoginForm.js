@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-export default class Login extends Component {
+export default class LoginForm extends Component {
   render() {
     return (
-      <div>
+      <div className = 'mainRight'>
         <div className='loginFrame'>
           <h3>Sign In</h3>
           <p>
