@@ -1,38 +1,44 @@
-import React, { Component } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import { useState } from 'react';
 
-export default class LoginForm extends Component {
-  render() {
-    return (
-      <div className = 'mainRight'>
-        <div className='loginFrame'>
-          <h3>Sign In</h3>
-          <p>
-            Sign in to eStat by entering your email address and password below.
-            If this is your first time logging into eStat after verifying your
-            email address, use the Forgot Password process to update your
-            password.
-          </p>
+import classes from './AuthForm.module.css';
+
+const AuthForm = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  const switchAuthModeHandler = () => {
+    setIsLogin((prevState) => !prevState);
+  };
+
+  return (
+    <section className={classes.auth}>
+      <h1>{isLogin ? 'Sign In' : 'Sign Up'}</h1>
+      <p>Sign in to eStat by entering your email address and password below.
+        If this is your first time logging into eStat after verifying your
+        email address, use the Forgot Password process to update your
+        password.
+      </p>
+      <form>
+        <div className={classes.control}>
+          <label htmlFor='email'>Your Email</label>
+          <input type='email' id='email' required />
         </div>
-        <Form>
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type='email' placeholder='Enter email' />
-          </Form.Group>
+        <div className={classes.control}>
+          <label htmlFor='password'>Your Password</label>
+          <input type='password' id='password' required />
+        </div>
+        <div className={classes.actions}>
+          <button>{isLogin ? 'Login' : 'Create Account'}</button>
+          <button
+            type='button'
+            className={classes.toggle}
+            onClick={switchAuthModeHandler}
+          >
+            {isLogin ? 'Create new account' : 'Login with existing account'}
+          </button>
+        </div>
+      </form>
+    </section>
+  );
+};
 
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control type='password' placeholder='Password' />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-            <Form.Check type='checkbox' label='Check me out' />
-          </Form.Group>
-          <Button variant='primary' type='submit'>
-            Submit
-          </Button>
-        </Form>
-      </div>
-    )
-  }
-}
+export default AuthForm;
