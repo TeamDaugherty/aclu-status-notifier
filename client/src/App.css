@@ -6,17 +6,27 @@
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: relative;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.header-title {
+  text-align: center;
+}
+
+.header-action {
+  position: absolute;
+  right: 10px;
+}
+
 .rowC {
-  height : 100vh;
-  display:flex;
-  flex-direction:row;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-link {
@@ -38,7 +48,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("./media/signInScreen.png")
+  background-image: url("./media/signInScreen.png");
 }
 
 .estat-info {
@@ -47,7 +57,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("./media/enterComplaintInfo.png")
+  background-image: url("./media/enterComplaintInfo.png");
 }
 
 .mainRight {
@@ -62,29 +72,26 @@
   justify-content: space-evenly;
 }
 
-
-.rectangle-active{
+.rectangle-active {
   display: inline-block;
   width: 100px;
   height: 20px;
   margin: 5px;
-  background: #231E5F;
+  background: #231e5f;
 }
 
-.rectangle-inactive{
+.rectangle-inactive {
   display: inline-block;
   width: 100px;
   height: 20px;
   margin: 5px;
-  background: #CDCCCC;
+  background: #cdcccc;
 }
-
 
 .split-screen {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   height: 100vh;
-
 }
 
 .half-screen {
@@ -93,46 +100,45 @@
 }
 
 img {
-    max-width:100%;
-    height:auto;
+  max-width: 100%;
+  height: auto;
 }
 
-.complaint-input{
+.complaint-input {
   margin-top: 10px;
   width: 50%;
   height: 50px;
   font-size: 1.5em;
 }
 
-input{
-font-size: 1em;
-width: 49%;
-height: 20px;
-border-style: solid;
-border-width: 2px;
-border-color: black;
+input {
+  font-size: 1em;
+  width: 49%;
+  height: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
 }
 
-.submit-btn{
+.submit-btn {
   margin-top: 10px;
   width: 50%;
   height: 50px;
-  background-color: #005AAA;
+  background-color: #005aaa;
   color: white;
   font-size: 1.5em;
   font-weight: bold;
-
 }
 
 .stepper {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
-.stepDisplay{
-  display:flex;
-  flex-direction:row;
+.stepDisplay {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -156,5 +162,4 @@ border-color: black;
   text-align: center;
   font: 18px Arial, sans-serif;
   font-weight: bold;
-
 }
