@@ -54,7 +54,7 @@ export class AddComplaint extends Component {
             Add Complaint to eStat
           </Button>
           <br/>
-          <Button variant="secondary" onClick={this.back} className="btn">
+          <Button variant="secondary" onClick={this.back} className="secondary-btn">
             Back
           </Button>
         </Form>

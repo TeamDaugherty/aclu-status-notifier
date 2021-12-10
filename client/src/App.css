@@ -4,7 +4,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,13 +24,21 @@
 }
 
 .rowC {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: row;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.error-message {
+  color: red;
+}
+
+.container {
+  width: 100%;
 }
 
 @keyframes App-logo-spin {
@@ -44,7 +52,7 @@
 
 .mainLeft {
   width: 50vw;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -91,7 +99,7 @@
 .split-screen {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 90vh;
 }
 
 .half-screen {
@@ -100,8 +108,8 @@
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .complaint-input {
@@ -126,8 +134,26 @@ input {
   height: 50px;
   background-color: #005aaa;
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
+}
+
+.secondary-btn {
+  margin-top: 10px;
+  min-width: 50%;
+  height: 50px;
+  color: #0645ad;
+  background: none;
+  text-decoration: underline;
+}
+
+.secondary-btn:hover {
+  color: grey;
+  text-decoration: underline;
+}
+
+.header-btn {
+  color: white;
 }
 
 .stepper {
