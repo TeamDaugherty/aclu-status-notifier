@@ -171,11 +171,11 @@ input {
 
 .dot {
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  padding: 5px;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
   margin-left: 10px;
-  background: #fff;
+  background: lightblue;
   border: 3px solid #000;
   color: #000;
   text-align: center;
