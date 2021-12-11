@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
-import { AmplifySignOut } from '@aws-amplify/ui-react'
+import { Button } from 'react-bootstrap';
 import MainPage from './components/MainPage'
 import Login from './components/Login/Login';
 import './App.css'
-import { Button } from 'react-bootstrap';
 
 export default class App extends Component {
   state = { user: undefined };
 
+  constructor() {
+    super()
+    const user = localStorage.getItem('user')
+    if (user) {
+      this.state = { user }
+    }
+  }
+
   setUser = (user) => {
-    // store in cookie?
-    // get on page load
     this.setState({ user: user });
+    localStorage.setItem( 'user', user );
   }
 
   signout = () => {
-    // clear cookie?
     this.setState({ user: undefined });
+    localStorage.removeItem('user')
   }
 
   render() {
@@ -25,7 +31,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <header className='App-header'>
-          <div className='header-title'>ACLU</div>
+          <div className='header-title'>ACLU E-STAT</div>
           <div className='header-action'>
             { user && <Button variant="secondary" onClick={this.signout} className={`secondary-btn header-btn`}>Sign Out</Button>}
           </div>

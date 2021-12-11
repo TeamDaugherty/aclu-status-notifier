@@ -1,13 +1,13 @@
 .auth {
   margin: 3rem auto;
-  width: 45%;
+  width: 35%;
   border-radius: 76px;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   text-align: center;
-  height: 68%;
-  margin-top: 10%;
+  height: 75%;
+  margin-top: 70px;
 }
 
 .auth h1 {
