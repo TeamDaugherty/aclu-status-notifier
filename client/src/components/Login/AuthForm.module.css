@@ -2,12 +2,13 @@
   margin: 3rem auto;
   width: 95%;
   max-width: 25rem;
-  border-radius: 6px;
+  border-radius: 76px;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   text-align: center;
-  height: fit-content;
+  height: 50%;
+  margin-top: 10%;
 }
 
 .auth h1 {
