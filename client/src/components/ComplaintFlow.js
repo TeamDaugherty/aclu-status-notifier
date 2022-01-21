@@ -3,10 +3,7 @@ import EnterComplaint from './EnterComplaint/EnterComplaint.js'
 import AddComplaint from './EnterComplaint/AddComplaint.js'
 import AddComplaintSummary from './EnterComplaint/AddComplaintSummary.js'
 import Success from './EnterComplaint/Success.js'
-
 import EnterComplaintInfo from './EnterComplaint/EnterComplaintInfo.js'
-
-
 
 export class ComplaintFlow extends React.Component {
   state = {
@@ -17,22 +14,21 @@ export class ComplaintFlow extends React.Component {
     complaintStatus:'',
     dateAdded:'',
     dateUpdated:'',
-
   };
 
   // Proceed to next step
-  nextStep = () => {
+  nextStep = (nextStep) => {
     const { step } = this.state;
     this.setState({
-      step: step + 1
+      step: nextStep ? nextStep : step + 1
     });
   };
 
   // Go back to prev step
-  prevStep = () => {
+  prevStep = (previousStep) => {
     const { step } = this.state;
     this.setState({
-      step: step - 1
+      step: previousStep ? previousStep : step - 1
     });
   };
 
@@ -40,7 +36,6 @@ export class ComplaintFlow extends React.Component {
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
   };
-
 
   render() {
   const { step } = this.state;

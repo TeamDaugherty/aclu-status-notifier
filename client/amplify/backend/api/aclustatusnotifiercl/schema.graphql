@@ -1,0 +1,13 @@
+type Complaint @model {
+  id: String!
+  complaintStatus: String
+  emailAddress: String
+  complaintUpdated: [ComplaintUpdatedItem]
+}
+
+type ComplaintUpdatedItem @model {
+  updatedBy: String
+  statusTo: String
+  statusFrom: String
+  dateUpdated: String
+}
