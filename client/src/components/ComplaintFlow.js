@@ -52,7 +52,9 @@ export class ComplaintFlow extends React.Component {
       return (
         <div className='split-screen'>
           <div className='half-screen'>
-            <EnterComplaintInfo/>
+            <EnterComplaintInfo
+              values={values}
+            />
           </div>
           <div className='half-screen'>
             <EnterComplaint
@@ -67,7 +69,9 @@ export class ComplaintFlow extends React.Component {
     return (
       <div className='split-screen'>
         <div className='half-screen'>
-          <EnterComplaintInfo/>
+          <EnterComplaintInfo
+            values={values}
+          />
         </div>
         <div className='half-screen'>
           <AddComplaint
@@ -83,7 +87,9 @@ export class ComplaintFlow extends React.Component {
     return (
       <div className='split-screen'>
         <div className='half-screen'>
-          <EnterComplaintInfo/>
+          <EnterComplaintInfo
+            values={values}
+          />
         </div>
         <div className='half-screen'>
           <AddComplaintSummary
@@ -99,7 +105,9 @@ export class ComplaintFlow extends React.Component {
     return (
       <div className='split-screen'>
         <div className='half-screen'>
-          <EnterComplaintInfo/>
+          <EnterComplaintInfo
+            values={values}
+          />
         </div>
         <div className='half-screen'>
           <Success
