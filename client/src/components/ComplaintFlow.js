@@ -1,38 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import EnterComplaint from './EnterComplaint/EnterComplaint.js'
 import AddComplaint from './EnterComplaint/AddComplaint.js'
 import AddComplaintSummary from './EnterComplaint/AddComplaintSummary.js'
 import Success from './EnterComplaint/Success.js'
-
 import EnterComplaintInfo from './EnterComplaint/EnterComplaintInfo.js'
-
-
+import steps from './EnterComplaint/steps'
 
 export class ComplaintFlow extends React.Component {
   state = {
-    step: 1,
+    step: steps.enterComplaintId,
     complaintID: '',
     emailAddress:'',
     phoneNumber:'',
     complaintStatus:'',
     dateAdded:'',
     dateUpdated:'',
-
   };
 
   // Proceed to next step
-  nextStep = () => {
+  nextStep = (nextStep) => {
     const { step } = this.state;
     this.setState({
-      step: step + 1
+      step: nextStep ? nextStep : step + 1
     });
   };
 
   // Go back to prev step
-  prevStep = () => {
+  prevStep = (previousStep) => {
     const { step } = this.state;
     this.setState({
-      step: step - 1
+      step: previousStep ? previousStep : step - 1
     });
   };
 
@@ -41,14 +38,13 @@ export class ComplaintFlow extends React.Component {
     this.setState({ [input]: e.target.value });
   };
 
-
   render() {
   const { step } = this.state;
   const { complaintID, emailAddress, phoneNumber, complaintStatus } = this.state;
   const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus };
 
   switch (step) {
-    case 1:
+    case steps.enterComplaintId:
       return (
         <div className='split-screen'>
           <div className='half-screen'>
@@ -65,7 +61,7 @@ export class ComplaintFlow extends React.Component {
           </div>
         </div>
       );
-    case 2:
+    case steps.createComplaint:
     return (
       <div className='split-screen'>
         <div className='half-screen'>
@@ -83,7 +79,18 @@ export class ComplaintFlow extends React.Component {
         </div>
       </div>
     );
-    case 3:
+    case steps.updateComplaint:
+    return (
+      <div className='split-screen'>
+        <div className='half-screen'>
+          <EnterComplaintInfo/>
+        </div>
+        <div className='half-screen'>
+            TODO - Update Complaint Component
+        </div>
+      </div>
+    );    
+    case steps.summary:
     return (
       <div className='split-screen'>
         <div className='half-screen'>
@@ -101,7 +108,7 @@ export class ComplaintFlow extends React.Component {
         </div>
       </div>
     );
-    case 4:
+    case steps.success:
     return (
       <div className='split-screen'>
         <div className='half-screen'>

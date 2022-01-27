@@ -12,7 +12,7 @@ class Stepper extends React.Component {
           <br / >
           <StepDisplay stepNumber={this.props.stepNumber}/>
           </div>
-          <div>{[...Array(4 - this.props.stepNumber)].map((e, i) => {
+          <div>{[...Array(5 - this.props.stepNumber)].map((e, i) => {
               return <div className = "rectangle-inactive" key={i}></div>
           })}
           </div>

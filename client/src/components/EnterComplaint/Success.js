@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Stepper from '../Stepper'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import steps from './steps'
 
 export class AddComplaint extends Component {
   continue = e => {

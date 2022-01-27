@@ -2,21 +2,21 @@ import React, { Component } from 'react'
 import Stepper from '../Stepper'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import steps from './steps'
 
 export class AddComplaint extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
-  back = e => {
-  e.preventDefault();
-  this.props.prevStep();
-};
-
-
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange, nextStep, prevStep } = this.props;
+
+    const submit = e => {
+        e.preventDefault();
+        nextStep(steps.success);
+      };
+    
+    const back = e => {
+      e.preventDefault();
+      prevStep();
+    };
 
     return (
       <div className="container">
@@ -38,11 +38,11 @@ export class AddComplaint extends Component {
           </p>
         </div>
 
-        <Button variant="primary" onClick={this.continue} className="submit-btn">
+        <Button variant="primary" onClick={submit} className="submit-btn">
           Send Update
         </Button>
         <br/>
-        <Button variant="secondary" onClick={this.back} className="btn">
+        <Button variant="secondary" onClick={back} className="btn">
           Back
         </Button>
 
