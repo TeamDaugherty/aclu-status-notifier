@@ -1,19 +1,22 @@
 import React from 'react';
+import steps from './EnterComplaint/steps'
 
 class StepDisplay extends React.Component {
 
   renderSwitch(param) {
     switch (param.stepNumber) {
-      case 1:
+      case steps.enterComplaintId:
         return <div className="stepText">Enter</div>
-      case 2:
+      case steps.createComplaint:
         return <div className="stepText">Add</div>
-      case 3:
+      case steps.updateComplaint:
+        return <div className="stepText">Update</div>        
+      case steps.summary:
         return <div className="stepText">Send Update</div>
-      case 4:
+      case steps.success:
         return <div className="stepText">Success</div>
       default:
-        return <div className="stepText">Add</div>
+        return <div className="stepText">Enter</div>
       }
   }
 
