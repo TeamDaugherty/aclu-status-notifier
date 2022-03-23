@@ -17,29 +17,51 @@ export class EnterComplaint extends Component {
   render() {
     const { values, handleChange, nextStep } = this.props;
 
+    // const submit = async (e) => {
+    //     e.preventDefault();
+    //     console.log("values.complaintID", values.complaintID)
+    //
+    //     if (!values.complaintID) {
+    //         return;
+    //     }
+    //
+    //     try {
+    //         const result = await API.graphql({ query: getComplaint, variables: { "id": values.complaintID } });
+    //         const complaint = result.data.getComplaint;
+    //
+    //         if (complaint) {
+    //             // TODO: set in values
+    //         }
+    //
+    //         const nextStepNumber = complaint ? steps.updateComplaint : steps.createComplaint
+    //         nextStep(nextStepNumber);
+    //     } catch (error) {
+    //         console.log("Error in submit: ", error)
+    //         this.setState({ errorMessage: "Unable to submit"})
+    //     }
+    // };
+
     const submit = async (e) => {
-        e.preventDefault();
-        console.log("values.complaintID", values.complaintID)
+      const apiName = 'sendEmailAPI'; // replace this with your api name.
+      const path = '/sendEmail'; //replace this with the path you have configured on your API
+      const myInit = {
+        body: {"complaintId": "1"}, // replace this with attributes you need
+        // headers: {'Access-Control-Allow-Origin' : '*',
+        // 'Access-Control-Allow-Headers': '*'}, // OPTIONAL
+      };
 
-        if (!values.complaintID) {
-            return;
-        }
 
-        try {
-            const result = await API.graphql({ query: getComplaint, variables: { "id": values.complaintID } });
-            const complaint = result.data.getComplaint;
-
-            if (complaint) {
-                // TODO: set in values
-            }
-
-            const nextStepNumber = complaint ? steps.updateComplaint : steps.createComplaint
-            nextStep(nextStepNumber);            
-        } catch (error) {
-            console.log("Error in submit: ", error)
-            this.setState({ errorMessage: "Unable to submit"})
-        }
+  console.log('Click happened');
+    API.post(apiName, path, myInit)
+       .then(response => {
+         console.log("SEND")
+       })
+       .catch(error => {
+         console.log(error.response);
+       });
     };
+
+
 
     return (
       <div className="container">

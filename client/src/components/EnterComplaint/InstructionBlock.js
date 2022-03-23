@@ -22,15 +22,15 @@ class InstructionBlock extends React.Component {
               <p>To get started with eStat, enter the complaint number you need to update.</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faPlus} size="6x"/>
+            //  <FontAwesomeIcon className="icon" icon={faPlus} size="1x"/>
               <p>If the complaint is not already in eStat, you can add it.</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faEdit} size="6x"/>
+              //<FontAwesomeIcon className="icon" icon={faEdit} size="1x"/>
               <p>If the complaint is already in eStat, you can update it</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faEnvelope} size="6x"/>
+            //  <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x"/>
               <p>After adding or updating the complaint to eStat, you can send an update to the email associated with the complaint</p>
             </div>
           </div>
@@ -45,15 +45,15 @@ class InstructionBlock extends React.Component {
               <p>Provide the information required and click "Add Complaint to eStat".</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faPlus} size="6x"/>
+              <FontAwesomeIcon className="icon" icon={faPlus} size="1x"/>
               <p>If the complaint is not already in eStat, you can add it.</p>
             </div>
             <div className="icon-row unselected">
-              <FontAwesomeIcon className="icon" icon={faEdit} size="6x"/>
+              <FontAwesomeIcon className="icon" icon={faEdit} size="1x"/>
               <p class>If the complaint is already in eStat, you can update it</p>
             </div>
             <div className="icon-row unselected">
-              <FontAwesomeIcon className="icon" icon={faEnvelope} size="6x"/>
+              <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x"/>
               <p>After adding or updating the complaint to eStat, you can send an update to the email associated with the complaint</p>
             </div>
           </div>
@@ -66,15 +66,15 @@ class InstructionBlock extends React.Component {
               <p>To get started with eStat, enter the complaint number you need to update.</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faPlus} size="6x"/>
+              <FontAwesomeIcon className="icon" icon={faPlus} size="1x"/>
               <p>If the complaint is not already in eStat, you can add it.</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faEdit} size="6x"/>
+              <FontAwesomeIcon className="icon" icon={faEdit} size="1x"/>
               <p>If the complaint is already in eStat, you can update it</p>
             </div>
             <div className="icon-row">
-              <FontAwesomeIcon className="icon" icon={faEnvelope} size="6x"/>
+              <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x"/>
               <p>After adding or updating the complaint to eStat, you can send an update to the email associated with the complaint</p>
             </div>
           </div>
@@ -87,15 +87,15 @@ class InstructionBlock extends React.Component {
                 <p>To get started with eStat, enter the complaint number you need to update.</p>
               </div>
               <div className="icon-row">
-                <FontAwesomeIcon className="icon" icon={faPlus} size="6x"/>
+                <FontAwesomeIcon className="icon" icon={faPlus} size="1x"/>
                 <p>If the complaint is not already in eStat, you can add it.</p>
               </div>
               <div className="icon-row">
-                <FontAwesomeIcon className="icon" icon={faEdit} size="6x"/>
+                <FontAwesomeIcon className="icon" icon={faEdit} size="1x"/>
                 <p>If the complaint is already in eStat, you can update it</p>
               </div>
               <div className="icon-row">
-                <FontAwesomeIcon className="icon" icon={faEnvelope} size="6x"/>
+                <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x"/>
                 <p>After adding or updating the complaint to eStat, you can send an update to the email associated with the complaint</p>
               </div>
             </div>
