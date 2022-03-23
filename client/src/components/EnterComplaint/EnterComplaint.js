@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { API } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Stepper from '../Stepper'
@@ -41,24 +42,21 @@ export class EnterComplaint extends Component {
     //     }
     // };
 
-    const submit = async (e) => {
-      const apiName = 'sendEmailAPI'; // replace this with your api name.
-      const path = '/sendEmail'; //replace this with the path you have configured on your API
+    async function sendEmail() {
+      const apiName = 'sendEmailNotificationAPI';
+      const path = '/sendEmail';
       const myInit = {
-        body: {"complaintId": "1"}, // replace this with attributes you need
-        // headers: {'Access-Control-Allow-Origin' : '*',
-        // 'Access-Control-Allow-Headers': '*'}, // OPTIONAL
-      };
+        body: {"complaintId": "1"},
+        headers: {
+          Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
+        },
+    };
+    return await API.post(apiName, path, myInit);
+}
 
-
-  console.log('Click happened');
-    API.post(apiName, path, myInit)
-       .then(response => {
-         console.log("SEND")
-       })
-       .catch(error => {
-         console.log(error.response);
-       });
+    const submit = (e) => {
+      e.preventDefault();
+      sendEmail();
     };
 
 
