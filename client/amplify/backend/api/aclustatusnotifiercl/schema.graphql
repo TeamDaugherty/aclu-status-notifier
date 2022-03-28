@@ -3,12 +3,12 @@ type Complaint @model {
   complaintStatus: String
   emailAddress: String
   phoneNumber: String
-  complaintUpdated: [ComplaintUpdatedItem]
+  complaintAudit: [ComplaintAuditItem]
 }
 
-type ComplaintUpdatedItem @model {
-  updatedBy: String
+type ComplaintAuditItem @model {
+  complaintId: String
   statusTo: String
   statusFrom: String
-  dateUpdated: String
+  updatedBy: String
 }

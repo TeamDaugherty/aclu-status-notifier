@@ -1,6 +1,6 @@
 # ACLU E-Stat
 
-The redesigned ACLU E-Stat application allows for the sending of notifications
+The ACLU E-Stat application allows for the sending of notifications
 to complaintants in regards to status changes in their complaint.
 
 The front-end application is developed using React, and his hosted in AWS Amplify.
@@ -14,6 +14,11 @@ The DB is a DynamoDB table.
 To start the application locally, run:
 
 `npm run start`
+
+## API Key
+
+An Api key is used to authenticate the UI with the API. This key expires every 365 days, and would
+need to be regenerated once expired. To do so, generate a new key in the settings for AWS AppSync and update the stored value in AWS Param Store.
 
 ## Amplify CLI
 
