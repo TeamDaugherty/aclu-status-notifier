@@ -51,7 +51,6 @@ export const updateComplaintCall = async (values) => {
         }
     }
     const result = await callApi(updateComplaint, variables);
-    console.log('prior: ', priorComplaintStatus)
     await createComplaintAuditItemCall(complaintID, complaintStatus, priorComplaintStatus)
 
     return result.data.updateComplaint;
