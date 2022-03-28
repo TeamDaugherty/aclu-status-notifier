@@ -12,4 +12,21 @@ The DB is a DynamoDB table.
 ## Local Development
 
 To start the application locally, run:
+
 `npm run start`
+
+## Amplify CLI
+
+### To view the Amplify Studio console:
+
+`amplify console`
+
+### To view the Amplify Studio GraphQL api console:
+
+`amplify console api`
+
+choose `GraphQL`
+
+### To push new Amplify changes:
+
+`amplify push`
