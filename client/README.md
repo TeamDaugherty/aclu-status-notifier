@@ -13,25 +13,28 @@ The DB is a DynamoDB table.
 
 To start the application locally, run:
 
-`npm run start`
-
-## API Key
-
-An Api key is used to authenticate the UI with the API. This key expires every 365 days, and would
-need to be regenerated once expired. To do so, generate a new key in the settings for AWS AppSync and update the stored value in AWS Param Store.
+> `npm run start`
 
 ## Amplify CLI
 
 ### To view the Amplify Studio console:
 
-`amplify console`
+> `amplify console`
 
 ### To view the Amplify Studio GraphQL api console:
 
-`amplify console api`
+> `amplify console api`
 
-choose `GraphQL`
+> choose `GraphQL`
 
 ### To push new Amplify changes:
 
-`amplify push`
+> `amplify push`
+
+### To generate a new API key:
+
+> `amplify update api`
+
+> Generate a new GraphQL API key, with expiration of 364 days.
+
+> `amplify push`

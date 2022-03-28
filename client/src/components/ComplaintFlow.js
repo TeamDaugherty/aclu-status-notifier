@@ -67,8 +67,8 @@ export class ComplaintFlow extends React.Component {
 
   render() {
   const { step } = this.state;
-  const { complaintID, emailAddress, phoneNumber, complaintStatus, isUpdate } = this.state;
-  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus, isUpdate };
+  const { complaintID, emailAddress, phoneNumber, complaintStatus, priorComplaintStatus, isUpdate } = this.state;
+  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus, priorComplaintStatus, isUpdate };
 
   switch (step) {
     case steps.enterComplaintId:

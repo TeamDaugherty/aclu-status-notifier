@@ -1,4 +1,4 @@
-type Complaint @model {
+type Complaint @model @auth(rules: [{ allow: private }]) {
   id: String!
   complaintStatus: String
   emailAddress: String
@@ -6,7 +6,7 @@ type Complaint @model {
   complaintAudit: [ComplaintAuditItem]
 }
 
-type ComplaintAuditItem @model {
+type ComplaintAuditItem @model @auth(rules: [{ allow: private }]) {
   complaintId: String
   statusTo: String
   statusFrom: String
