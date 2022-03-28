@@ -1,6 +1,6 @@
 import React from 'react';
 import EnterComplaint from './EnterComplaint/EnterComplaint.js'
-import AddComplaint from './EnterComplaint/AddComplaint.js'
+import ComplaintData from './EnterComplaint/ComplaintData.js'
 import AddComplaintSummary from './EnterComplaint/AddComplaintSummary.js'
 import Success from './EnterComplaint/Success.js'
 import EnterComplaintInfo from './EnterComplaint/EnterComplaintInfo.js'
@@ -9,6 +9,7 @@ import steps from './EnterComplaint/steps'
 export class ComplaintFlow extends React.Component {
   state = {
     step: steps.enterComplaintId,
+    isUpdate: false,
     complaintID: '',
     emailAddress:'',
     phoneNumber:'',
@@ -20,6 +21,7 @@ export class ComplaintFlow extends React.Component {
   // Proceed to next step
   nextStep = (nextStep) => {
     const { step } = this.state;
+
     this.setState({
       step: nextStep ? nextStep : step + 1
     });
@@ -33,6 +35,28 @@ export class ComplaintFlow extends React.Component {
     });
   };
 
+  setComplaint = (complaint) => {
+    if (complaint) {
+        const { emailAddress, complaintStatus } = complaint
+        console.log('complaintFlow: ', complaint)
+        this.setState({
+            isUpdate: true,
+            emailAddress,
+            // TODO: phoneNumber,
+            complaintStatus
+        });
+    }
+  }
+
+  clearComplaint = () => {
+    this.setState({
+        isUpdate: false,
+        emailAddress: '',
+        // TODO: phoneNumber: '',
+        complaintStatus: ''
+    });
+  }
+
   // Handle fields change
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
@@ -40,8 +64,8 @@ export class ComplaintFlow extends React.Component {
 
   render() {
   const { step } = this.state;
-  const { complaintID, emailAddress, phoneNumber, complaintStatus } = this.state;
-  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus };
+  const { complaintID, emailAddress, phoneNumber, complaintStatus, isUpdate } = this.state;
+  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus, isUpdate };
 
   switch (step) {
     case steps.enterComplaintId:
@@ -53,6 +77,8 @@ export class ComplaintFlow extends React.Component {
           <div className='half-screen'>
             <EnterComplaint
               nextStep={this.nextStep}
+              setComplaint={this.setComplaint}
+              clearComplaint={this.clearComplaint}
               handleChange={this.handleChange}
               values={values}
             />
@@ -66,23 +92,12 @@ export class ComplaintFlow extends React.Component {
           <EnterComplaintInfo/>
         </div>
         <div className='half-screen'>
-          <AddComplaint
+          <ComplaintData
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             values={values}
           />
-        </div>
-      </div>
-    );
-    case steps.updateComplaint:
-    return (
-      <div className='split-screen'>
-        <div className='half-screen'>
-          <EnterComplaintInfo/>
-        </div>
-        <div className='half-screen'>
-            TODO - Update Complaint Component
         </div>
       </div>
     );    

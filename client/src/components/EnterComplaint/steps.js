@@ -1,9 +1,8 @@
 const steps = {
     enterComplaintId: 1,
     createComplaint: 2,
-    updateComplaint: 3,
-    summary: 4,
-    success: 5
+    summary: 3,
+    success: 4
 }
 
 export default steps;

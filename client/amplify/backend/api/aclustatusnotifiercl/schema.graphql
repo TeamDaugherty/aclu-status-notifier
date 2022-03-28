@@ -2,6 +2,7 @@ type Complaint @model {
   id: String!
   complaintStatus: String
   emailAddress: String
+  phoneNumber: String
   complaintUpdated: [ComplaintUpdatedItem]
 }
 
