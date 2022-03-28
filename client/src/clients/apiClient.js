@@ -9,9 +9,10 @@ const callApi = async (query, variables) => {
     return await API.graphql({ 
         query, 
         variables,
-        authMode: GRAPHQL_AUTH_MODE.API_KEY,
-        authToken: 'da2-rp42tpzpszeizdofyfmgqsbpqu'
+        // authMode: GRAPHQL_AUTH_MODE.API_KEY,
+        // authToken: 'da2-rp42tpzpszeizdofyfmgqsbpqu'
     });
+    // {"x-api-key": 'da2-rp42tpzpszeizdofyfmgqsbpqu'});
 }
 
 export const getComplaintbyIdCall = async (id) => {
