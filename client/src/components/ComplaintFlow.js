@@ -11,11 +11,12 @@ export class ComplaintFlow extends React.Component {
     step: steps.enterComplaintId,
     isUpdate: false,
     complaintID: '',
-    emailAddress:'',
-    phoneNumber:'',
-    complaintStatus:'',
-    dateAdded:'',
-    dateUpdated:'',
+    emailAddress: '',
+    phoneNumber: '',
+    complaintStatus: '',
+    priorComplaintStatus: '',
+    dateAdded: '',
+    dateUpdated: ''
   };
 
   // Proceed to next step
@@ -37,13 +38,14 @@ export class ComplaintFlow extends React.Component {
 
   setComplaint = (complaint) => {
     if (complaint) {
-        const { emailAddress, complaintStatus } = complaint
-        console.log('complaintFlow: ', complaint)
+        const { emailAddress, complaintStatus, phoneNumber } = complaint;
+        
         this.setState({
             isUpdate: true,
             emailAddress,
-            // TODO: phoneNumber,
-            complaintStatus
+            phoneNumber,
+            complaintStatus,
+            priorComplaintStatus: complaintStatus
         });
     }
   }
@@ -52,8 +54,9 @@ export class ComplaintFlow extends React.Component {
     this.setState({
         isUpdate: false,
         emailAddress: '',
-        // TODO: phoneNumber: '',
-        complaintStatus: ''
+        phoneNumber: '',
+        complaintStatus: '',
+        priorComplaintStatus: ''
     });
   }
 
@@ -64,8 +67,8 @@ export class ComplaintFlow extends React.Component {
 
   render() {
   const { step } = this.state;
-  const { complaintID, emailAddress, phoneNumber, complaintStatus, isUpdate } = this.state;
-  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus, isUpdate };
+  const { complaintID, emailAddress, phoneNumber, complaintStatus, priorComplaintStatus, isUpdate } = this.state;
+  const values = { step, complaintID, emailAddress, phoneNumber, complaintStatus, priorComplaintStatus, isUpdate };
 
   switch (step) {
     case steps.enterComplaintId:

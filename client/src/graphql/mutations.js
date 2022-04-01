@@ -10,12 +10,13 @@ export const createComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -33,12 +34,13 @@ export const updateComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -56,12 +58,13 @@ export const deleteComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -70,49 +73,49 @@ export const deleteComplaint = /* GraphQL */ `
     }
   }
 `;
-export const createComplaintUpdatedItem = /* GraphQL */ `
-  mutation CreateComplaintUpdatedItem(
-    $input: CreateComplaintUpdatedItemInput!
-    $condition: ModelComplaintUpdatedItemConditionInput
+export const createComplaintAuditItem = /* GraphQL */ `
+  mutation CreateComplaintAuditItem(
+    $input: CreateComplaintAuditItemInput!
+    $condition: ModelComplaintAuditItemConditionInput
   ) {
-    createComplaintUpdatedItem(input: $input, condition: $condition) {
+    createComplaintAuditItem(input: $input, condition: $condition) {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }
   }
 `;
-export const updateComplaintUpdatedItem = /* GraphQL */ `
-  mutation UpdateComplaintUpdatedItem(
-    $input: UpdateComplaintUpdatedItemInput!
-    $condition: ModelComplaintUpdatedItemConditionInput
+export const updateComplaintAuditItem = /* GraphQL */ `
+  mutation UpdateComplaintAuditItem(
+    $input: UpdateComplaintAuditItemInput!
+    $condition: ModelComplaintAuditItemConditionInput
   ) {
-    updateComplaintUpdatedItem(input: $input, condition: $condition) {
+    updateComplaintAuditItem(input: $input, condition: $condition) {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteComplaintUpdatedItem = /* GraphQL */ `
-  mutation DeleteComplaintUpdatedItem(
-    $input: DeleteComplaintUpdatedItemInput!
-    $condition: ModelComplaintUpdatedItemConditionInput
+export const deleteComplaintAuditItem = /* GraphQL */ `
+  mutation DeleteComplaintAuditItem(
+    $input: DeleteComplaintAuditItemInput!
+    $condition: ModelComplaintAuditItemConditionInput
   ) {
-    deleteComplaintUpdatedItem(input: $input, condition: $condition) {
+    deleteComplaintAuditItem(input: $input, condition: $condition) {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }
