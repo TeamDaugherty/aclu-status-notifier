@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { API } from 'aws-amplify';
 import { Auth } from 'aws-amplify';
+=======
+>>>>>>> fdc085a5c20fb4a02e6652b1f94831a7ffcfc59e
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Stepper from '../Stepper'
-import { getComplaint } from '../../graphql/queries';
 import steps from './steps'
+import { getComplaintbyIdCall } from 'clients/apiClient'
 
 export class EnterComplaint extends Component {
   constructor(props) {
@@ -16,31 +19,30 @@ export class EnterComplaint extends Component {
   }
 
   render() {
-    const { values, handleChange, nextStep } = this.props;
+    const { values, handleChange, nextStep, setComplaint, clearComplaint } = this.props;
 
-    // const submit = async (e) => {
-    //     e.preventDefault();
-    //     console.log("values.complaintID", values.complaintID)
-    //
-    //     if (!values.complaintID) {
-    //         return;
-    //     }
-    //
-    //     try {
-    //         const result = await API.graphql({ query: getComplaint, variables: { "id": values.complaintID } });
-    //         const complaint = result.data.getComplaint;
-    //
-    //         if (complaint) {
-    //             // TODO: set in values
-    //         }
-    //
-    //         const nextStepNumber = complaint ? steps.updateComplaint : steps.createComplaint
-    //         nextStep(nextStepNumber);
-    //     } catch (error) {
-    //         console.log("Error in submit: ", error)
-    //         this.setState({ errorMessage: "Unable to submit"})
-    //     }
-    // };
+    const submit = async (e) => {
+      e.preventDefault();
+
+      if (!values.complaintID) {
+          return;
+      }
+
+      try {
+          const complaint = await getComplaintbyIdCall(values.complaintID);
+
+          if (complaint) {
+              setComplaint(complaint)
+          } else {
+              clearComplaint()
+          }
+
+          nextStep(steps.createComplaint);
+      } catch (error) {
+          console.log("Error in submit: ", error)
+          this.setState({ errorMessage: "Unable to submit"})
+      }
+};
 
     async function sendEmail() {
       const apiName = 'sendEmailNotificationAPI';
@@ -52,13 +54,7 @@ export class EnterComplaint extends Component {
         },
     };
     return await API.post(apiName, path, myInit);
-}
-
-    const submit = (e) => {
-      e.preventDefault();
-      sendEmail();
-    };
-
+    }
 
 
     return (

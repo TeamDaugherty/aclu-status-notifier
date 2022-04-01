@@ -7,12 +7,13 @@ export const onCreateComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -27,12 +28,13 @@ export const onUpdateComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -47,12 +49,13 @@ export const onDeleteComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -61,40 +64,40 @@ export const onDeleteComplaint = /* GraphQL */ `
     }
   }
 `;
-export const onCreateComplaintUpdatedItem = /* GraphQL */ `
-  subscription OnCreateComplaintUpdatedItem {
-    onCreateComplaintUpdatedItem {
+export const onCreateComplaintAuditItem = /* GraphQL */ `
+  subscription OnCreateComplaintAuditItem {
+    onCreateComplaintAuditItem {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateComplaintUpdatedItem = /* GraphQL */ `
-  subscription OnUpdateComplaintUpdatedItem {
-    onUpdateComplaintUpdatedItem {
+export const onUpdateComplaintAuditItem = /* GraphQL */ `
+  subscription OnUpdateComplaintAuditItem {
+    onUpdateComplaintAuditItem {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteComplaintUpdatedItem = /* GraphQL */ `
-  subscription OnDeleteComplaintUpdatedItem {
-    onDeleteComplaintUpdatedItem {
+export const onDeleteComplaintAuditItem = /* GraphQL */ `
+  subscription OnDeleteComplaintAuditItem {
+    onDeleteComplaintAuditItem {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }

@@ -7,12 +7,13 @@ export const getComplaint = /* GraphQL */ `
       id
       complaintStatus
       emailAddress
-      complaintUpdated {
+      phoneNumber
+      complaintAudit {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }
@@ -32,12 +33,13 @@ export const listComplaints = /* GraphQL */ `
         id
         complaintStatus
         emailAddress
-        complaintUpdated {
+        phoneNumber
+        complaintAudit {
           id
-          updatedBy
+          complaintId
           statusTo
           statusFrom
-          dateUpdated
+          updatedBy
           createdAt
           updatedAt
         }
@@ -48,36 +50,36 @@ export const listComplaints = /* GraphQL */ `
     }
   }
 `;
-export const getComplaintUpdatedItem = /* GraphQL */ `
-  query GetComplaintUpdatedItem($id: ID!) {
-    getComplaintUpdatedItem(id: $id) {
+export const getComplaintAuditItem = /* GraphQL */ `
+  query GetComplaintAuditItem($id: ID!) {
+    getComplaintAuditItem(id: $id) {
       id
-      updatedBy
+      complaintId
       statusTo
       statusFrom
-      dateUpdated
+      updatedBy
       createdAt
       updatedAt
     }
   }
 `;
-export const listComplaintUpdatedItems = /* GraphQL */ `
-  query ListComplaintUpdatedItems(
-    $filter: ModelComplaintUpdatedItemFilterInput
+export const listComplaintAuditItems = /* GraphQL */ `
+  query ListComplaintAuditItems(
+    $filter: ModelComplaintAuditItemFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listComplaintUpdatedItems(
+    listComplaintAuditItems(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
     ) {
       items {
         id
-        updatedBy
+        complaintId
         statusTo
         statusFrom
-        dateUpdated
+        updatedBy
         createdAt
         updatedAt
       }

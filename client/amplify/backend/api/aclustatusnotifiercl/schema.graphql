@@ -1,13 +1,14 @@
-type Complaint @model {
+type Complaint @model @auth(rules: [{ allow: private }]) {
   id: String!
   complaintStatus: String
   emailAddress: String
-  complaintUpdated: [ComplaintUpdatedItem]
+  phoneNumber: String
+  complaintAudit: [ComplaintAuditItem]
 }
 
-type ComplaintUpdatedItem @model {
-  updatedBy: String
+type ComplaintAuditItem @model @auth(rules: [{ allow: private }]) {
+  complaintId: String
   statusTo: String
   statusFrom: String
-  dateUpdated: String
+  updatedBy: String
 }
