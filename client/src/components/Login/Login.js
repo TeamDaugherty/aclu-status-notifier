@@ -17,6 +17,10 @@ export default class Login extends Component {
         const user = await Auth.signIn(emailAddress, password ? password : " ");
         console.log('Authenticated: ', user)
         this.props.setUser(user);
+        Auth.currentAuthenticatedUser({
+            bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+          }).then(user => console.log(user))
+          .catch(err => console.log(err));
     } catch (error) {
         console.log('error signing in', error.message);
         this.setState({ errorMessage: error.message });
