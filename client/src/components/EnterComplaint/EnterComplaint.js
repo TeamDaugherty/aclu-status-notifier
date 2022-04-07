@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import Stepper from '../Stepper'
 import steps from './steps'
 import { getComplaintbyIdCall } from 'clients/apiClient'
+import { API, Auth } from 'aws-amplify';
+
 
 export class EnterComplaint extends Component {
   constructor(props) {
@@ -11,6 +13,18 @@ export class EnterComplaint extends Component {
       this.state = {
           errorMessage: undefined
       }
+  }
+
+  async function sendEmail() {
+      const apiName = 'acluNotificationAPI';
+      const path = '/sendEmail';
+      const myInit = {
+        body: {"complaintId": "1"},
+        headers: {
+          Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
+        },
+    };
+    return await API.post(apiName, path, myInit);
   }
 
   render() {
@@ -32,7 +46,7 @@ export class EnterComplaint extends Component {
                 clearComplaint()
             }
 
-            nextStep(steps.createComplaint);            
+            nextStep(steps.createComplaint);
         } catch (error) {
             console.log("Error in submit: ", error)
             this.setState({ errorMessage: "Unable to submit"})

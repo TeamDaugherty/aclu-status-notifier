@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/sendEmail": {
+      "name": "/sendEmail",
+      "lambdaFunction": "sendEmailLambda",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
