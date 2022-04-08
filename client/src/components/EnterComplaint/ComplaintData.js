@@ -3,6 +3,7 @@ import Stepper from '../Stepper'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import steps from './steps'
+import statuses  from './Statuses'
 import { updateComplaintCall, createComplaintCall } from 'clients/apiClient'
 
 export class ComplaintData extends Component {
@@ -55,6 +56,7 @@ export class ComplaintData extends Component {
           { isUpdate ? emailAddress : 
             <Form.Group className="mb-3" controlId="formEmailAddress">
               <Form.Control type="text" placeholder="Email Address"
+              required
               value={emailAddress}
               onChange={handleChange('emailAddress')}
               />
@@ -70,9 +72,18 @@ export class ComplaintData extends Component {
           }
           <h4>Complaint Status:</h4>
           <Form.Group className="mb-3" controlId="formComplaintStatus">
-            <Form.Control type="text" placeholder="Complaint Status"
-            value={complaintStatus}
-            onChange={handleChange('complaintStatus')}/>
+            <Form.Control
+              required
+              className="dropdown-input"
+              as="select" 
+              value={complaintStatus}
+              onChange={handleChange('complaintStatus')}
+            >
+                <option value="">Please select a status</option>
+                {statuses.map((status) => {
+                    return (<option value={status}>{status}</option>)
+                })}
+            </Form.Control>
           </Form.Group>
 
           <Button variant="primary" type="submit" className="submit-btn">

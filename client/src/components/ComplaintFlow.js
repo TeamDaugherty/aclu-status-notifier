@@ -28,6 +28,14 @@ export class ComplaintFlow extends React.Component {
     });
   };
 
+  skipStep = (nextStep) => {
+    const { step } = this.state;
+
+    this.setState({
+      step: nextStep ? nextStep : step + 1
+    });    
+  }
+
   // Go back to prev step
   prevStep = (previousStep) => {
     const { step } = this.state;
@@ -57,6 +65,12 @@ export class ComplaintFlow extends React.Component {
         phoneNumber: '',
         complaintStatus: '',
         priorComplaintStatus: ''
+    });
+  }
+
+  clearComplaintId = () => {
+    this.setState({
+        complaintID: ''
     });
   }
 
@@ -119,8 +133,7 @@ export class ComplaintFlow extends React.Component {
         <div className='half-screen'>
           <AddComplaintSummary
             nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
+            skipStep={this.skipStep}
             values={values}
           />
         </div>
@@ -137,8 +150,7 @@ export class ComplaintFlow extends React.Component {
         <div className='half-screen'>
           <Success
             nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
+            clearComplaintId={this.clearComplaintId}
             values={values}
           />
         </div>
