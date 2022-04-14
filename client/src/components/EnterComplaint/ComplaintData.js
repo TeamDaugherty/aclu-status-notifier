@@ -53,23 +53,21 @@ export class ComplaintData extends Component {
         <Form onSubmit={submit}>
 
           <h4>Email Address:</h4>
-          { isUpdate ? emailAddress : 
             <Form.Group className="mb-3" controlId="formEmailAddress">
               <Form.Control type="text" placeholder="Email Address"
               required
+              disabled={isUpdate}
               value={emailAddress}
               onChange={handleChange('emailAddress')}
               />
             </Form.Group>
-          }
           <h4>Cell Phone Number:</h4>
-          { isUpdate ? phoneNumber : 
             <Form.Group className="mb-3" controlId="formPhoneNumber">
-              <Form.Control type="text" placeholder="555-555-5555"
+              <Form.Control type="text" placeholder="Phone Number"
+              disabled={isUpdate}
               value={phoneNumber}
               onChange={handleChange('phoneNumber')}/>
             </Form.Group>
-          }
           <h4>Complaint Status:</h4>
           <Form.Group className="mb-3" controlId="formComplaintStatus">
             <Form.Control
