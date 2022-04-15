@@ -19,17 +19,6 @@ export class EnterComplaint extends Component {
   render() {
     const { values, handleChange, nextStep, setComplaint, clearComplaint } = this.props;
 
-    async function sendEmail() {
-        const apiName = 'acluNotificationAPI';
-        const path = '/sendEmail';
-        const myInit = {
-          body: {"complaintId": "1"},
-          headers: {
-            Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
-          },
-      };
-      return await API.post(apiName, path, myInit);
-    }
 
     const submit = async (e) => {
         e.preventDefault();

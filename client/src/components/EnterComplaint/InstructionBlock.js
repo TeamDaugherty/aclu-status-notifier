@@ -50,7 +50,7 @@ class InstructionBlock extends React.Component {
             </div>
             <div className="icon-row unselected">
               <FontAwesomeIcon className="icon" icon={faEdit} size="1x"/>
-              <p class>If the complaint is already in eStat, you can update it</p>
+              <p >If the complaint is already in eStat, you can update it</p>
             </div>
             <div className="icon-row unselected">
               <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x"/>
