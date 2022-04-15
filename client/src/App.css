@@ -253,7 +253,8 @@ input {
   position: absolute;
   top: 8px;
   left: 16px;
-  
+}
+
 .summaryContainerItem {
   text-align: left;
   margin-left: 55px;

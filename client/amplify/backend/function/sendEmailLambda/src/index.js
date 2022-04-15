@@ -2,18 +2,16 @@ var aws = require("aws-sdk");
 var ses = new aws.SES({ region: "us-east-1" });
 
 exports.handler = (event, context, callback) => {
-    let body = "Complaint COMPLAINT_ID has been updated to status COMPLAINT_STAUS."
-    sendMail("Update Alert for Complaint COMPLAINT_ID ", body,event);
+  let body = JSON.parse(event.body)
+  let emailBody = "Complaint COMPLAINT_ID has been updated to status COMPLAINT_STAUS."
+  sendMail("Update Alert for Complaint COMPLAINT_ID ", emailBody, body);
 };
 
 async function sendMail(subject, data,event) {
-  console.log(event.complaintId);
-  console.log(event.email);
-  console.log(event.complaintStatus);
 
-  subject.replace('COMPLAINT_ID', event.complaintId)
-  data.replace('COMPLAINT_ID', event.complaintId)
-  data.replace('COMPLAINT_STAUS', event.complaintStatus)
+  subject = subject.replace('COMPLAINT_ID', event.complaintId)
+  data = data.replace('COMPLAINT_ID', event.complaintId)
+  data = data.replace('COMPLAINT_STAUS', event.complaintStatus)
 
   const emailParams = {
         Destination: {
