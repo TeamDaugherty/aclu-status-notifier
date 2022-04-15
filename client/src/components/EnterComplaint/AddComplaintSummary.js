@@ -42,15 +42,15 @@ export class AddComplaint extends Component {
           <p>
             <span style={{fontWeight: "bold"}}>Complaint ID</span> : {values.complaintID}
           </p>
-          <p>
-          <span style={{fontWeight: "bold"}}>Email Adress</span> : {values.emailAddress}
-          </p>
-          <p>
-          <span style={{fontWeight: "bold"}}>Phone Number</span> : {values.phoneNumber}
-          </p>
-          <p>
-          <span style={{fontWeight: "bold"}}>Status</span> : {values.complaintStatus}
-          </p>
+          <div className="summaryContainerItem">
+              <span style={{fontWeight: "bold"}}>Email Adress</span> : {values.emailAddress}
+          </div>
+          <div className="summaryContainerItem">
+              <span style={{fontWeight: "bold"}}>Phone Number</span> : {values.phoneNumber}
+          </div>
+          <div className="summaryContainerItem">
+              <span style={{fontWeight: "bold"}}>Status</span> : {values.complaintStatus}
+          </div>
         </div>
 
         <Button variant="primary" onClick={submit} className="submit-btn">
