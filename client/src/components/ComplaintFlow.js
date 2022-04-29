@@ -47,7 +47,7 @@ export class ComplaintFlow extends React.Component {
   setComplaint = (complaint) => {
     if (complaint) {
         const { emailAddress, complaintStatus, phoneNumber } = complaint;
-        
+
         this.setState({
             isUpdate: true,
             emailAddress,
@@ -89,7 +89,9 @@ export class ComplaintFlow extends React.Component {
       return (
         <div className='split-screen'>
           <div className='half-screen'>
-            <EnterComplaintInfo/>
+            <EnterComplaintInfo
+              values={values}
+            />
           </div>
           <div className='half-screen'>
             <EnterComplaint
@@ -106,7 +108,9 @@ export class ComplaintFlow extends React.Component {
     return (
       <div className='split-screen'>
         <div className='half-screen'>
-          <EnterComplaintInfo/>
+          <EnterComplaintInfo
+            values={values}
+          />
         </div>
         <div className='half-screen'>
           <ComplaintData
@@ -117,12 +121,14 @@ export class ComplaintFlow extends React.Component {
           />
         </div>
       </div>
-    );    
+    );
     case steps.summary:
     return (
       <div className='split-screen'>
         <div className='half-screen'>
-          <EnterComplaintInfo/>
+          <EnterComplaintInfo
+            values={values}
+          />
         </div>
         <div className='half-screen'>
           <AddComplaintSummary
@@ -137,7 +143,9 @@ export class ComplaintFlow extends React.Component {
     return (
       <div className='split-screen'>
         <div className='half-screen'>
-          <EnterComplaintInfo/>
+          <EnterComplaintInfo
+            values={values}
+          />
         </div>
         <div className='half-screen'>
           <Success
