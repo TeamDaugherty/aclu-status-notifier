@@ -15,7 +15,7 @@ async function sendMail(subject, data,event) {
 
   const emailParams = {
         Destination: {
-          ToAddresses: ["justin.bergkamp@gmail.com"],
+          ToAddresses: [to-email],
         },
         Message: {
           Body: {
@@ -23,7 +23,7 @@ async function sendMail(subject, data,event) {
           },
           Subject: { Data: subject },
         },
-        Source: "justin.bergkamp@gmail.com",
+        Source: source-email,
   };
 
   let code = 200;
